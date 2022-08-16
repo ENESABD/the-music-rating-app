@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="">
+    </head>
+
+    <body>
+        <h1>Register</h1>
+        {{ messages }}
+        <form action="" method = "POST">
+            {% csrf_token %}
+            Username: <input type="text" name="username"><br>
+
+            Password: <input type="password" name="password"><br>
+
+            <input type="submit" name="submit0" value="Register">  
+        </form>
+
+        <h1>Song Retrieval</h1>
+        {{ messages1 }}
+        <form action="" method = "POST">
+            {% csrf_token %}
+            Username: <input type="text" name="username"><br>
+
+            <input type="submit" name="submit1" value="Retrieve Songs"> 
+            <br>
+            {{ songrating }}
+        </form>
+
+
+        <h1>Is the song copyrighted?</h1>
+        {{ messages2 }}
+        <form action="" method = "POST">
+            {% csrf_token %}
+            Song: <input type="text" name="song"><br>
+
+            <input type="submit" name="submit2" value="Copyrighted?"> 
+            <br>
+            {{ copyright }}
+        </form>
+    </body>
+</html>
