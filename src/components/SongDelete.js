@@ -7,7 +7,7 @@ function SongDelete( { songID , setRightColumn } ) {
     const [isError, setIsError] = useState(false);
 
     const handleClickYes = () => {
-        axios.delete(`http://the-music-rating-app.herokuapp.com/api/songs/${songID}/`)
+        axios.delete(`https://the-music-rating-app.herokuapp.com/api/songs/${songID}/`)
             .then(res => {
                 setIsError(false);
                 setRightColumn("Welcome!");

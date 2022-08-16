@@ -23,7 +23,7 @@ function SongUpdate({ songID, setRightColumn }) {
 
 
     useEffect(() => {
-        axios.get("http://the-music-rating-app.herokuapp.com/api/songs/")
+        axios.get("https://the-music-rating-app.herokuapp.com/api/songs/")
             .then(res => {
                 setSongList(res.data);
             })
@@ -39,7 +39,7 @@ function SongUpdate({ songID, setRightColumn }) {
     const handleSubmit = async (event) => {
         event.preventDefault();     
         try {
-            let result0 = await axios.get("http://the-music-rating-app.herokuapp.com/api/details/");
+            let result0 = await axios.get("https://the-music-rating-app.herokuapp.com/api/details/");
             let detail = result0.data.filter(val => getSong(val.song).id == songID)[0];
             let detailID = detail.id;
             let emptyField = () => {
@@ -79,9 +79,9 @@ function SongUpdate({ songID, setRightColumn }) {
             console.log(updatedSong);
 
 
-            let result = await axios.put(`http://the-music-rating-app.herokuapp.com/api/songs/${songID}/`, 
+            let result = await axios.put(`https://the-music-rating-app.herokuapp.com/api/songs/${songID}/`, 
                                         updatedSong);
-            axios.put(`http://the-music-rating-app.herokuapp.com/api/details/${detailID}/`, {song : result.data.id, genre : info.genre || detail.genre, 
+            axios.put(`https://the-music-rating-app.herokuapp.com/api/details/${detailID}/`, {song : result.data.id, genre : info.genre || detail.genre, 
                     year_of_release : info.year_of_release || detail.year_of_release, 
                     duration_of_song : info.duration_of_song || detail.duration_of_song})
                 .then(res => {

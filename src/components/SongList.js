@@ -19,7 +19,7 @@ function Songlist({songAdded, setRightColumn, setSongID, rightColumn}) {
    
   
     useEffect(() => {
-      axios.get("http://the-music-rating-app.herokuapp.com/api/details/") 
+      axios.get("https://the-music-rating-app.herokuapp.com/api/details/") 
         .then(res => {
             setList(res.data);
         })
@@ -28,7 +28,7 @@ function Songlist({songAdded, setRightColumn, setSongID, rightColumn}) {
 
 
     useEffect(() => {
-        axios.get("http://the-music-rating-app.herokuapp.com/api/songs/")
+        axios.get("https://the-music-rating-app.herokuapp.com/api/songs/")
             .then(res => {
                 setSongList(res.data);
             })

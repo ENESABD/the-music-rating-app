@@ -40,20 +40,20 @@ function AddSongForm({setSongAdded , songAdded, setHideForm, setAddSong}) {
                     setErrorMessage("Please enter a valid duration using the required formatting: 00:00");
                 }
                 else {
-                    let result = await axios.post("http://the-music-rating-app.herokuapp.com/api/songs/", 
+                    let result = await axios.post("https://the-music-rating-app.herokuapp.com/api/songs/", 
                                                 {song_name : info.song_name, artist_name : info.artist_name});                                        
 
-                    axios.post("http://the-music-rating-app.herokuapp.com/api/details/", {song : result.data.id, genre : info.genre, 
+                    axios.post("https://the-music-rating-app.herokuapp.com/api/details/", {song : result.data.id, genre : info.genre, 
                             year_of_release : info.year_of_release, duration_of_song : info.duration_of_song})
                         .then(res => {
                             setIsError(false);
                             setSongAdded(!songAdded);
                             setHideForm(true);
                             setAddSong(false);
-                            axios.post("http://the-music-rating-app.herokuapp.com/api/ratings/", { username : 18, song : result.data.id, rating: 0 })
+                            axios.post("https://the-music-rating-app.herokuapp.com/api/ratings/", { username : 18, song : result.data.id, rating: 0 })
                         })       
                         .catch(err =>{
-                            axios.delete(`http://the-music-rating-app.herokuapp.com/api/songs/${result.data.id}`);
+                            axios.delete(`https://the-music-rating-app.herokuapp.com/api/songs/${result.data.id}`);
                             console.log("hiii");
                             setIsError(true);
                             setErrorMessage("Please fill in all the fields with valid information!");

@@ -13,19 +13,19 @@ function SongDetail({ songID }) {
 
 
     useEffect(() => {
-        axios.get(`http://the-music-rating-app.herokuapp.com/api/songs/${songID}/`)
+        axios.get(`https://the-music-rating-app.herokuapp.com/api/songs/${songID}/`)
             .then(res => setSongObject(res.data))
             .catch(err => console.log(err.response));
     },[songID])
 
     useEffect(async () => {
-        let res = await axios.get("http://the-music-rating-app.herokuapp.com/api/details");
+        let res = await axios.get("https://the-music-rating-app.herokuapp.com/api/details");
         let detailObjectList = res.data;
         setDetailObject(detailObjectList.filter(value => value.song == songID)[0]);
     },[songID])
 
     useEffect(async () => {
-        let res = await axios.get("http://the-music-rating-app.herokuapp.com/api/ratings");
+        let res = await axios.get("https://the-music-rating-app.herokuapp.com/api/ratings");
         let ratingObjectList = res.data;
         let ratingObject = ratingObjectList.filter(value => value.song == songID)[0]
         setRatingObjectID(ratingObject.id);
@@ -73,7 +73,7 @@ const handleSubmit = async (event) => {
 
 
         if (!isError) {  
-            axios.put(`http://the-music-rating-app.herokuapp.com/api/ratings/${ratingObjectID}/`, {rating : input_rating, song : songID, username : 19})
+            axios.put(`https://the-music-rating-app.herokuapp.com/api/ratings/${ratingObjectID}/`, {rating : input_rating, song : songID, username : 19})
                 .then(res => {
                     console.log(res.data);
                     if (input_rating){
