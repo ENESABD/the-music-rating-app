@@ -134,6 +134,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8000',
     'https://127.0.0.1:8000',
     'https://the-music-rating-app.com'
+    'http://the-music-rating-app.com'
 ]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
