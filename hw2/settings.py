@@ -133,7 +133,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8000',
     'https://127.0.0.1:8000',
-    'https://the-music-rating-app.com'
+    'https://the-music-rating-app.com',
     'http://the-music-rating-app.com'
 ]
 
