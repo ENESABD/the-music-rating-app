@@ -25,7 +25,7 @@ SECRET_KEY = '@uz6^4=m!i+^x(fjp_x5jb9+o+k05@g9@492)s^q4+3c5-&gb*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'the-music-rating-app.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'the-music-rating-app.herokuapp.com', 'the-music-rating-app.up.railway.app']
 
 
 # Application definition
@@ -134,7 +134,9 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8000',
     'https://127.0.0.1:8000',
     'https://the-music-rating-app.com',
-    'http://the-music-rating-app.com'
+    'http://the-music-rating-app.com',
+    'http://the-music-rating-app.up.railway.app',
+    'https://the-music-rating-app.up.railway.app'
 ]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
